@@ -16,4 +16,10 @@ document.getElementById('get-weather').addEventListener('click',()=>{/* ()=>{} i
         <p>Humidity: ${data.current.wind_kph} km/h</p>
         `
     })
-}) 
+}) .catch(error=>{
+    console.error('Error fetching weather data: ', error);
+    const weatherInfo = document.getElementById('weather-info');
+    weatherInfo.innerHTML=`
+    <p>Error fetching weather data. Please try again. </p>
+    `
+})

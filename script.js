@@ -1,11 +1,11 @@
-document.getElementById('get-weather').addEventListener('click',()=>{/* ()=>{} is called annonymous arrow function in js*/
+document.getElementById('get-weather').addEventListener('click',()=>{
     const location = document.getElementById('city-input').value.trim();
     if(!location){
         alert('please enter a city name');
         return;
     }
     const apiKey = "52bc14bf1df3f5a9d620a61de21f4a2d";
-    const url=`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`  /* this form is called template literal */
+    const url=`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}` 
     fetch(url).then(response=>response.json()).then(data=>{
         const weatherInfo = document.getElementById('weather-info');
         weatherInfo.innerHTML=`
